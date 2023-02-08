@@ -62,15 +62,11 @@ console.log(getLast([1,2,6,5,8]));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
-  let myArray;
   for (let arrayIndex = 0; arrayIndex<array.length; arrayIndex++) {
-    let myArray = array[arrayIndex]
-    if (myArray[arrayIndex] === value) {
+    if (array[arrayIndex] === value) {
        return true; 
-    } else if (myArray[arrayIndex] !== value) {
-      return false;
-    }
-  };
+    } 
+  } return false;
 };
 console.log(find('cookie', ['pie', 'cookie']));
 
@@ -80,14 +76,13 @@ console.log(find('cookie', ['pie', 'cookie']));
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-  if (letter === string) {
+   let firstLetter = string[0]
+  if (letter === firstLetter) {
     return true;
-  } else if (letter !== string) {
-    return false;
-  }
+  }; return false;
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
-console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'blueberries') );
 
 // 9. Function to return the sum of all numbers in an array
 const sumAll = (array) => {
