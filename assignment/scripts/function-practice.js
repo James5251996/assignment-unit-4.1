@@ -108,3 +108,17 @@ console.log(newArray);
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+// You are given three positive integers t, a, b. Your task is to establish whether (t^a - 1)/(t^b -1) is an integer with less than 100 digits.
+// Return the result of (t^a - 1)/(t^b -1) in string format, if the result is an integer with less than 100 digits. Otherwise, return "Not an integer with less than 100 digits".
+let sum = 0
+function math (t,a,b) {
+  sum = (t^a - 1)/(t^b - 1);
+  let sumString = sum.toString().length;
+  if (sumString < 100) {
+    console.log(sumString);
+  } else if (sumString > 100) {
+    console.log('Not an integer with less than 100 digits');
+  } 
+}
+math(2,3,2);
+
