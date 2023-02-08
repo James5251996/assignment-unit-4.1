@@ -41,7 +41,7 @@ console.log('The total is this multiplication is', multiplyThree(2,3,8));
 function isPositive( number ) {
   if ( number > 0 ){
     return true;
-  } else if( number <= 0)
+  } else if ( number <= 0 )
     return false;
 }
 // Call the function to test each outcome (true & false) 
@@ -56,14 +56,23 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 function getLast( array ) {
  return array.slice(-1);
 };
-console.log(getLast([1,2,6,5]));
+console.log(getLast([1,2,6,5,8]));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
-  
-}
+  let myArray;
+  for (let arrayIndex = 0; arrayIndex<array.length; arrayIndex++) {
+    let myArray = array[arrayIndex]
+    if (myArray[arrayIndex] === value) {
+       return true; 
+    } else if (myArray[arrayIndex] !== value) {
+      return false;
+    }
+  };
+};
+console.log(find('cookie', ['pie', 'cookie']));
 
 // ----------------------
 // Stretch Goals
@@ -71,22 +80,34 @@ function find( value, array ){
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (letter === string) {
+    return true;
+  } else if (letter !== string) {
+    return false;
+  }
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+const sumAll = (array) => {
   let sum = 0
+  for (let sumIndex = 0; sumIndex<array.length; sumIndex++) {
+     sum += array[sumIndex];
+  }
   // TODO: loop to add items
   return sum;
 }
+console.log('the sum of this array is', sumAll([7, 10, 4, 2]))
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-
+let positiveArray = [1,3,4,-6,-2,1];
+const newArray = positiveArray.filter( numbers => {
+  return numbers > 0
+});
+console.log(newArray); 
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
